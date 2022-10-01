@@ -27,3 +27,5 @@ jobs:
         node index.js &
         sleep 10
         nemwan run e2e/Mongoose-express-apitests.postman_collection.json
+      env:
+        NODE_ENV: "develop"
