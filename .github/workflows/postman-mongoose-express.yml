@@ -21,11 +21,12 @@ jobs:
     - name: Install newman
       run: npm install -g newman
     
-    - name: Run the api and postman tests
+    - name: Run API
       run: |
         cd mongoose-express
-        node index.js &
-        sleep 10
-        nemwan run e2e/Mongoose-express-apitests.postman_collection.json
-      env:
-        NODE_ENV: "develop"
+        nohup node index.js
+
+    - name: Run API tests
+      uses: matt-ball/newman-action@master
+      with:
+        collection: e2e/Mongoose-express-apitests.postman_collection.json
