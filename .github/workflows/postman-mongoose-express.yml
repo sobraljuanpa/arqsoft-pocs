@@ -24,7 +24,7 @@ jobs:
     - name: Run API
       run: |
         cd mongoose-express
-        nohup node index.js
+        nohup node index.js > something.txt
 
     - name: Run API tests
       uses: matt-ball/newman-action@master
