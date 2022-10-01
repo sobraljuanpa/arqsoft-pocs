@@ -18,9 +18,6 @@ jobs:
     - name: Install dependencies
       run: cd mongoose-express && npm install
     
-    - name: Install newman
-      run: npm install -g newman
-    
     - name: Run API in background
       run: |
         cd mongoose-express
