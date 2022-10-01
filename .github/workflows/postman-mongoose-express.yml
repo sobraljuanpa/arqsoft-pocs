@@ -19,7 +19,7 @@ jobs:
       run: cd mongoose-express && npm install
     
     - name: Install newman
-      run: cd mongoose-express && npm install newman
+      run: npm install -g newman
     
     - name: Run the api and postman tests
       run: |
