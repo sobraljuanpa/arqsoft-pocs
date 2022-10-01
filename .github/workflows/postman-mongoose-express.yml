@@ -29,4 +29,4 @@ jobs:
     - name: Run API tests
       uses: matt-ball/newman-action@master
       with:
-        collection: e2e/Mongoose-express-apitests.postman_collection.json
+        collection: mongoose-express/e2e/Mongoose-express-apitests.postman_collection.json
