@@ -12,13 +12,20 @@ services:
       - "27017:27017"
     networks:
       - sa-network
-  redis:
-    container_name: redis
-    image: redis:latest
+  app:
+    restart: on-failure
+    build: .
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app/
+      - /app/node_modules
     ports:
-      - "6379:6379"
+      - "3000:3000"
     networks:
       - sa-network
+    command: node index.js
+
 networks:
   sa-network:
     name: sa-network

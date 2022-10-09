@@ -89,7 +89,7 @@ const fiestaCarlCox = new Event({
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://localhost:27017/test').then(
+    await mongoose.connect('mongodb://mongo:27017/test').then( //se modifica la url de conexion para usar el nombre del contenedor por compose y que resuelva internamente por dns.
         () => console.log("Connected to mongo instance")
     );
 
